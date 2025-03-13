@@ -1,2 +1,2 @@
 # codyssey
-Codyssey 문제를 저장하는 공간입니다.
+Codyssey 과제 제출을 위한 저장소입니다.
