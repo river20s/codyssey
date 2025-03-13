@@ -8,15 +8,19 @@ def main():
             log_content = log_file.read()
             # 로그 파일이 열렸음을 알리는 메시지 출력
             print(f"파일 열림: {log_path}\n")
-            # 로그 파일 내용 출력
-            print(log_content)
+            # 보너스 과제 수행을 위해 로그 파일 내용을 시간 역순으로 출력
+            log_lines = log_content.splitlines()
+            header = log_lines[0] # 첫 번째 줄은 헤더로 저장
+            log_lines = log_lines[1:] # 헤더를 제외한 나머지 줄
+            reversed_log_content = "\n".join(log_lines[::-1])
+            print(header) # 헤더 출력
+            print(reversed_log_content) # 시간 역순으로 로그 내용 출력
     except FileNotFoundError:
         # 파일이 없는 경우 에러 메시지 출력
-        print(f"파일을 찾을 수 없습니다: {log_path}")
+        print(f'파일을 찾을 수 없습니다: {log_path}')
     except Exception as e:
         # 기타 예외 발생 시 에러 메시지 출력
-        print(f"에러가 발생했습니다: {e}")
+        print(f'에러가 발생했습니다: {e}')
 
 if __name__ == '__main__':
     main()
-    
