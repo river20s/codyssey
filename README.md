@@ -5,7 +5,7 @@ Codyssey 과제 제출을 위한 저장소입니다.
 
 **필수 과제**
 - [x] [문제 1-1](https://github.com/river20s/codyssey/tree/main/Week-02)
-- [ ] 문제 1-3
+- [x] [문제 1-3](https://github.com/river20s/codyssey/tree/main/Week-03)
 - [ ] 문제 1-6
 - [ ] 문제 1-7
 - [ ] 문제 1-8
