@@ -31,6 +31,9 @@ def main():
     except FileNotFoundError:
         # 파일이 없는 경우 에러 메시지 출력
         print(f'파일을 찾을 수 없습니다: {log_path}')
+    except PermissionError:
+        # 접근 권한이 없는 경우 에러 메시지 출력
+        print(f'접근 권한이 없습니다: {log_path} 또는 {output_path}')
     except Exception as e:
         # 기타 예외 발생 시 에러 메시지 출력
         print(f'에러가 발생했습니다: {e}')
