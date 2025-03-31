@@ -31,7 +31,7 @@ class DummySensor:
             if not os.path.exists(self.LOG_FILENAME):
                 with open(self.LOG_FILENAME, 'w', newline='', encoding='utf-8') as csvfile:
                     writer = csv.writer(csvfile)
-                    writer.writerow(["Timestamp", "Sensor", "Reading"])
+                    writer.writerow(['Timestamp', 'Sensor', 'Reading'])
         except Exception:
             pass
 
@@ -61,7 +61,7 @@ class DummySensor:
         # env_values의 각 값을 로그 파일에 기록 
         for key, value in self.env_values.items():
             try:
-                reading = f"{value:.2f}{self.units[key]}"
+                reading = f'{value:.2f}{self.units[key]}'
                 self.log(key, reading)
             except Exception:
                 pass
