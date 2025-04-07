@@ -1,0 +1,21 @@
+# 문제 7
+- [ ] 미션 컴퓨터에 해당하는 `MissionComputer` 클래스를 생성한다.
+- [ ] 화성 기지의 환경에 대한 값을 저장할 수 있는 사전 객체 `env_values`를 추가한다.
+- [ ] `env_values` 안에 다음과 같은 내용을 구현한다:
+    - 화성 기지 내부 온도 (mars_base_internal_temperature)
+    - 화성 기지 외부 온도 (mars_base_external_temperature)
+    - 화성 기지 내부 습도 (mars_base_internal_humidity)
+    - 화성 기지 외부 광량 (mars_base_external_illuminance)
+    - 화성 기지 내부 이산화탄소 농도 (mars_base_internal_co2)
+    - 화성 기지 내부 산소 농도 (mars_base_internal_oxygen)
+- [ ] 문제 3에서 제작한 `DummySensor` 클래스를 `ds`라는 이름으로 인스턴스화 시킨다.
+- [ ] `MissionComputer`에 `get_sensor_data()` 메소드를 추가한다.
+- [ ] `get_sensor_data()`에 다음 세 기능을 추가한다:
+    - 센서의 값을 가져와서 `env_values`에 담는다.
+    - `env_values`의 값을 출력한다. 이때 환경 정보 값은 json 형태로 화면에 출력한다.
+    - 위 두 가지 동작을 5초에 한 번씩 반복한다.
+- [ ] `MissionComputer` 클래스를 `RunComputer`라는 이름으로 인스턴스화 한다.
+- [ ] `RunComputer` 인스턴스의 `get_sensor_data()` 메소드를 호출해서 지속적으로 환경에 대한 값을 출력하게 한다.
+- [ ] 전체 코드를 `mars_mission_computer.py` 파일로 저장한다.
+- [ ] 특정 키를 입력할 경우 반복적으로 출력되던 화성 기지의 환경에 대한 출력을 멈추고 `System stopped...`를 출력할 수 있어야 한다.
+- [ ] 5분에 한번씩 각 환경값에 대한 5분 평균 값을 별도로 출력한다.
