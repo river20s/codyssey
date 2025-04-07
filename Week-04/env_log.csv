@@ -17,3 +17,9 @@ Timestamp,Sensor,Reading
 2025-03-30 23:15:34,mars_base_external_illuminance,668.37W/㎡
 2025-03-30 23:15:34,mars_base_internal_co2,0.08%
 2025-03-30 23:15:34,mars_base_internal_oxygen,5.25%
+2025-03-31 19:48:04,mars_base_internal_temperature,18.15°
+2025-03-31 19:48:04,mars_base_external_temperature,2.32°
+2025-03-31 19:48:04,mars_base_internal_humidity,52.49%
+2025-03-31 19:48:04,mars_base_external_illuminance,625.84W/㎡
+2025-03-31 19:48:04,mars_base_internal_co2,0.05%
+2025-03-31 19:48:04,mars_base_internal_oxygen,6.08%
