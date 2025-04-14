@@ -1,0 +1,7 @@
+OS
+OS version
+CPU Type
+CPU core count
+Memory size(GB)
+Real-time CPU usage(%)
+Real-time Memory usage(%)
