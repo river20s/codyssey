@@ -1,5 +1,6 @@
-import time, platform, os
+import time, platform, os, psutil
 from Week_04.mars_mission_computer import DummySensor
+
 
 class MissionComputer:
     def __init__(self):
@@ -14,11 +15,70 @@ class MissionComputer:
         }
         # DummySensor 인스턴스 ds
         self.ds = DummySensor()
+        # setting.txt 파일로부터 출력할 항목 읽어오기
+        self.settings = self.read_settings()
+
+    def read_settings(self):
+        """
+        setting.txt 파일을 읽고 각 줄의 항목을 리스트로 반환함.
+        파일이 없거나 읽기에 실패하면 None을 반환함.
+        """
+        try:
+            with open('setting.txt', 'r', encoding = 'utf-8') as f:
+                lines = f.readlines()
+                settings = [line.strip() for line in lines if line.strip()]
+                return settings
+        except Exception:
+            return None
 
     def get_mission_computer_info(self):
-        os_name = platform.system() # OS 이름
-        os_version = platform.version() 
+        # 미션 컴퓨터 시스템 정보를 가져와 JSON 형식으로 출력
+        info = {}
+        try:
+            info['OS'] = platform.system()
+        except Exception:
+            info['OS'] = 'No info'
 
+        try:
+            info['OS version'] = platform.version()
+        except Exception:
+            info['OS version'] = 'No info'
+
+        try:
+            cpu_type = platform.processor()
+            if not cpu_type:
+                cpu_type = platform.machine()
+            info['CPU Type'] = cpu_type
+        except Exception:
+            info['CPU Type'] = 'No info'
+        
+        try:
+            info['CPU core count'] = os.cpu_count()
+        except Exception:
+            info['CPU core count'] = 'No info'
+        
+        try:
+            memory_bytes = psutil.virtual_memory().total
+            info['Memory size(GB)'] = round(memory_bytes / (1024 ** 3), 2)
+        except Exception:
+            info['Memory size(GB)'] = 'No info'
+
+        self.print_json(info)
+
+
+    def get_mission_computer_load(self):
+        load_info = {}
+        try:
+            load_info['Real-time CPU usage(%)'] = psutil.cpu_percent(interval = 1) # 1초 간격 CPU 사용률
+        except Exception:
+            load_info['Real-time CPU usage(%)'] = 'No info'
+
+        try:
+            load_info['Real-time Memory usage(%)'] = psutil.virtual_memory().percent
+        except Exception:
+                load_info['Real-time Memory usage(%)'] = 'No info'
+
+        self.print_json(load_info)
 
     def print_json(self, data):
         """
@@ -101,5 +161,8 @@ class MissionComputer:
         except KeyboardInterrupt:
             print('================== SYSTEM STOPPED... ==================')
 
-ms = MissionComputer()
-ms.get_sensor_data()
+runComputer = MissionComputer()
+print('============= MISSION COMPUTER INFO =============')
+runComputer.get_mission_computer_info()
+print('============= MISSION COMPUTER LOAD =============')
+runComputer.get_mission_computer_load()
