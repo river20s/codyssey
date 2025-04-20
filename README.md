@@ -7,8 +7,8 @@ Codyssey 과제 제출을 위한 저장소입니다.
 - [x] [문제 1-1](https://github.com/river20s/codyssey/tree/main/Week-02)
 - [x] [문제 1-3](https://github.com/river20s/codyssey/tree/main/Week-03)
 - [x] [문제 1-6]((https://github.com/river20s/codyssey/tree/main/Week-04))
-- [ ] 문제 1-7
-- [ ] 문제 1-8
+- [x] [문제 1-7](https://github.com/river20s/codyssey/tree/main/Week_05)
+- [x] [문제 1-8](https://github.com/river20s/codyssey/tree/main/Week_06)
 - [ ] 문제 2-3
 - [ ] 문제 2-4
 - [ ] 문제 2-1
