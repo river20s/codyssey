@@ -59,7 +59,6 @@ def load_caesar_target_from_zip() -> str | None:
 
             content_bytes = zf.read(filename_inside_zip, pwd=zip_pw_bytes)
             caesar_target_text = content_bytes.decode('utf-8')
-            # print(f"    -> 로드된 암호문: '{caesar_target_text}'")
 
     except FileNotFoundError: 
         print(f"오류: ZIP 파일 내에 '{filename_inside_zip}' 파일이 없습니다.")
@@ -78,7 +77,6 @@ def load_caesar_target_from_zip() -> str | None:
         return None   
 
     if caesar_target_text is not None:
-        # print("암호문 로딩 성공")
         return caesar_target_text
     else:
         print("암호문을 가져오지 못했습니다.")
@@ -92,7 +90,6 @@ def caesar_cipher_decode(target_text: str, key: int) -> str:
 
     Return:
         :str:
-
     """
     # 해독된 문자들을 저장할 빈 리스트를 준비 (나중에 "".join())
     # 입력된 target_text의 각 문자 char에 대해 
@@ -167,9 +164,3 @@ if __name__ == "__main__":
         print(f"오류: 선택된 key에 해당되는 해독된 텍스트 찾을 수 없음")
 else:
     print("암호문을 가져오는 데 실패했습니다.")
-
-    
-
-
-
-
